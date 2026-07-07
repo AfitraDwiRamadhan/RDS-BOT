@@ -120,14 +120,20 @@
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-start px-0 bg-transparent border-bottom">
                                 <div class="ms-2 me-auto">
-                                    <div class="fw-bold"><code>!additem [Nama] | [Detail]</code></div>
-                                    Menambahkan item penjualan baru langsung ke database lewat obrolan WhatsApp.
+                                    <div class="fw-bold"><code>!additem [Nama] | [Harga/Detail]</code></div>
+                                    Menambahkan item jualan baru ke database. Pisahkan Nama dan Detail menggunakan karakter <code>|</code>.
+                                </div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-start px-0 bg-transparent border-bottom">
+                                <div class="ms-2 me-auto">
+                                    <div class="fw-bold"><code>!addevent</code> / <code>!addpromo [Judul] | [Deskripsi]</code></div>
+                                    Menambahkan Event/Promo baru. Kirim pesan ini sebagai <strong>caption gambar</strong> untuk menyertakan poster promo otomatis.
                                 </div>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-start px-0 bg-transparent border-bottom">
                                 <div class="ms-2 me-auto">
                                     <div class="fw-bold"><code>!promodelete [Judul]</code> / <code>!listdelete [Nama]</code></div>
-                                    Menghapus data promo atau item katalog dari database bot.
+                                    Menghapus data promo/event jualan atau item katalog produk secara instan dari database.
                                 </div>
                             </li>
                         </ul>
