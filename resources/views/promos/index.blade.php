@@ -49,6 +49,7 @@
                         <tr>
                             <th>Gambar</th>
                             <th>Judul Promo/Event</th>
+                            <th>Bot Terkait</th>
                             <th>Deskripsi / Isi Promo</th>
                             <th>Status Aktif</th>
                             <th>Aksi</th>
@@ -68,10 +69,12 @@
                             </td>
                             <td>
                                 <strong>{{ $promo->title }}</strong>
+                            </td>
+                            <td>
                                 @if($promo->bot)
-                                    <br><span class="badge bg-light text-dark border text-muted small mt-1"><i class="fa-solid fa-robot"></i> {{ $promo->bot->name }}</span>
+                                    <span class="badge bg-light text-dark border text-muted small"><i class="fa-solid fa-robot"></i> {{ $promo->bot->name }} ({{ $promo->bot->bot_id }})</span>
                                 @else
-                                    <br><span class="badge bg-light text-dark border text-muted small mt-1"><i class="fa-solid fa-globe"></i> Global</span>
+                                    <span class="badge bg-light text-dark border text-muted small"><i class="fa-solid fa-globe"></i> Global</span>
                                 @endif
                             </td>
                             <td>{!! nl2br(e($promo->description)) !!}</td>
@@ -98,7 +101,7 @@
                         </tr>
                         @empty
                         <tr>
-                            <td colspan="5" class="text-center text-muted py-4">Belum ada Promo/Event yang ditambahkan.</td>
+                            <td colspan="6" class="text-center text-muted py-4">Belum ada Promo/Event yang ditambahkan.</td>
                         </tr>
                         @endforelse
                     </tbody>
