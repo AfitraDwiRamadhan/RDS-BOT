@@ -48,6 +48,7 @@
                     <thead class="table-dark">
                         <tr>
                             <th>Nama Item</th>
+                            <th>Bot Terkait</th>
                             <th>Harga (IDR)</th>
                             <th>Deskripsi</th>
                             <th>Status Aktif</th>
@@ -59,10 +60,12 @@
                         <tr>
                             <td>
                                 <strong>{{ $item->name }}</strong>
+                            </td>
+                            <td>
                                 @if($item->bot)
-                                    <br><span class="badge bg-light text-dark border text-muted small mt-1"><i class="fa-solid fa-robot"></i> {{ $item->bot->name }}</span>
+                                    <span class="badge bg-light text-dark border text-muted small"><i class="fa-solid fa-robot"></i> {{ $item->bot->name }} ({{ $item->bot->bot_id }})</span>
                                 @else
-                                    <br><span class="badge bg-light text-dark border text-muted small mt-1"><i class="fa-solid fa-globe"></i> Global</span>
+                                    <span class="badge bg-light text-dark border text-muted small"><i class="fa-solid fa-globe"></i> Global</span>
                                 @endif
                             </td>
                             <td>Rp {{ number_format($item->price, 0, ',', '.') }}</td>
@@ -90,7 +93,7 @@
                         </tr>
                         @empty
                         <tr>
-                            <td colspan="5" class="text-center text-muted py-4">Belum ada item yang ditambahkan ke daftar jualan.</td>
+                            <td colspan="6" class="text-center text-muted py-4">Belum ada item yang ditambahkan ke daftar jualan.</td>
                         </tr>
                         @endforelse
                     </tbody>
