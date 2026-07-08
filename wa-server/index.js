@@ -140,7 +140,9 @@ async function startBot(botId) {
 
                 let mediaPath = null;
                 const hasImage = !!msg.message?.imageMessage;
-                if (hasImage) {
+                const isPromoCommand = text.toLowerCase().trim().startsWith('!addpromo') || 
+                                       text.toLowerCase().trim().startsWith('!addevent');
+                if (hasImage && isPromoCommand) {
                     try {
                         const { downloadContentFromMessage } = require('@whiskeysockets/baileys');
                         const imageMessage = msg.message.imageMessage;
